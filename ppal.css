@@ -1,0 +1,54 @@
+html,body{
+	
+	background: linear-gradient(-45deg, rgba(204,204,204,1), rgba(194,194,194,0));
+}
+
+.container{
+	width: auto !important;
+}
+
+
+.nav-users{
+	border: none !important;
+	font-size: 0.8em;
+}
+
+.nav-users>li{
+	float: right !important;
+
+}
+
+.nav-users>li>a{
+	padding: 0px 5px !important;
+
+}
+
+
+.nav-users>li.active>a, .nav-users>li.active>a:focus, .nav-users>li.active>a:hover {   
+    border: none !important;
+ 
+}
+
+.nav-lateralMenu {
+	float: none !important;
+}
+
+.nav-lateralMenu > li{
+	float: none !important;
+}
+
+.navbar-collapse{
+	padding-right: 0px !important; 
+    padding-left: 0px !important;
+}
+
+.dropdown-menu>.active>a{
+	color: black !important;
+	background-color: #e7e7e7 !important;
+}
+
+.row {
+	margin-right: 0px !important;
+}
+
+
