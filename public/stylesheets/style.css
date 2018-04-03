@@ -1,0 +1,55 @@
+body {
+  padding: 5px;
+  font: 14px "Lucida Grande", Helvetica, sans-serif, Arial;
+  
+}
+
+.container{
+	width: auto !important;
+
+}
+
+/*navbar lateral menu*/
+
+.navbar-nav {
+     margin: 0px !important; 
+}
+
+
+
+.affix-sidebar{
+	margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+}
+
+.navbar-default {
+    background-color: inherit !important;
+    
+}
+
+
+
+.nav-lateralMenu {
+	float: none !important;
+}
+
+.nav-lateralMenu > li{
+	float: none !important;
+}
+
+.navbar-collapse{
+	padding-right: 0px !important; 
+    padding-left: 0px !important;
+}
+
+.dropdown-menu>.active>a{
+	color: black !important;
+	background-color: #e7e7e7 !important;
+}
+
+.row {
+	margin-right: 0px !important;
+}
+

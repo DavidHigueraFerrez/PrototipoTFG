@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8"> 
+  <!-- CSS -->
+  <link rel='stylesheet' href='/stylesheets/style.css' /> 
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <title>Aplicación Gestión Docente</title>
+</head>
+<body>
+  <div id="contenedor">
+    <p style="text-align: right;margin-right: 5px;"><a href="#">Salir</a></p>
+    <ul class="nav nav-tabs nav-users">
+    <li class="nav-item active"><a class="nav-link" data-toggle="tab" href="/#inicio">INICIO</a></li>
+      <li class="nav-item"><a class="nav-link" data-toggle="tab" href="/#informacion">INFORMACIÓN</a></li>
+      <li class="nav-item"><a class="nav-link" data-toggle="tab" href="/#secretaria">SECRETARÍA</a></li>
+      <li class="nav-item"><a  class="nav-link" data-toggle="tab" href="/#aplicaciones">APLICACIONES</a></li>
+    </ul>
+    <div class="tab-content">
+     <div class="row affix-row">
+      <div class="col-sm-3 col-md-2" >
+
+
+        <!-- Inicio -->
+        <div id="inicio" class="tab-pane fade in active">
+
+        <div class="affix-sidebar sidebar-nav navbar navbar-default" role="navigation">
+            <ul class="nav  navbar-nav nav-lateralMenu" id="sidenav01">
+              <li class><a href="/ejemplo1">Ejemplo 1</a></li>
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Ejemplo 2<span class="caret"></span></a>
+                <ul class="dropdown-menu ">
+                  <!--  <li><a  href="#profesorAsignaturas">Ejemplo 2.1</a></li> -->
+                  <li><a  href="/ejemplo2.1">Ejemplo 2.1</a></li>
+                  <li><a  href="/ejemplo2.2">Ejemplo 2.2</a></li>                         
+                </ul>
+              </li>
+            </ul>   
+          </div>
+
+        </div>
+        <!-- Información -->
+        <div id="informacion" class="tab-pane fade">
+          
+
+        </div>
+
+        
+        <!-- Secretaría -->
+        <div id="secretaria" class="tab-pane fade">
+
+        </div>
+        <!-- Aplicaciones -->
+        <div id="aplicaciones" class="tab-pane fade">
+
+        </div>
+      </div>
+      
+      <div class="col-sm-9 col-md-10 affix-content">
+        <div class="container">
+          <%- body %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>
