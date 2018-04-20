@@ -3,12 +3,17 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index');
+  res.render('login', { layout: false });
 });
 
 //Paginas ejemplo
 
+router.get("/index", function(req, res, next){
+  res.render('index');
+});
+
 router.get('/ejemplo1', function(req, res, next) {
+
   res.render('ejemplo' , {numEjemplo:"1"});
 });
 
