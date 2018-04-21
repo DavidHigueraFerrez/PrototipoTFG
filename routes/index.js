@@ -25,5 +25,8 @@ router.get('/ejemplo2.2', function(req, res, next) {
   res.render('ejemplo' , {numEjemplo:"2.2"});
 });
 
+router.get('/tribunalActas', function(req, res, next){
+  res.render('tribunalActas');
+});
 
 module.exports = router;

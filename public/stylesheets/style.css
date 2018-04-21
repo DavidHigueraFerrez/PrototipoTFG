@@ -53,3 +53,6 @@ body {
 	margin-right: 0px !important;
 }
 
+.row-grid + .row-grid {
+    margin-top: 15px;
+}
