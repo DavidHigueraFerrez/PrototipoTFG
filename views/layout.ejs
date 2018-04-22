@@ -13,48 +13,54 @@
 </head>
 <body>
   <div id="contenedor">
-    <p style="text-align: right;margin-right: 5px;"><a href="#">Salir</a></p>
-
-    <div class="collapse navbar-collapse tab-content" id="myNavbar">
-      <ul class="nav nav-tabs nav-users">
+    <div class="row col-md-11 row-grid"></div>
+    <div class="row">
+      <p class="col-md-1 row grid"><a href="#">Salir</a></p>
+    </div>
+    <div class="collapse navbar-collapse tab-content row row-grid" id="myNavbar">
+      <ul class="nav nav-tabs nav-users col-md-12">
         <!-- Jefe De Estudios -->
-        <li class="dropdown nav-item active">
+        <li class="dropdown nav-item  col-md-2">
           <a class="dropdown-toggle nav-link" data-toggle="dropdown" href="#">Jefe de estudios</a>
-          <ul class="dropdown-menu col-sm-3 col-md-2">
-              <li><a href="/tribunalActas">GITST</a></li>
-              <li><a href="/ejemplo1">GIB</a></li>
-              <li><a href="#section42">MUIT</a></li>
-              <li><a href="#section42">Masters</a></li>
+          <ul class="dropdown-menu col-md-12">
+            <li><a href="/ejemplo1">GITST</a></li>
+            <li><a href="/ejemplo1">GIB</a></li>
+            <li><a href="/ejemplo1">MUIT</a></li>
+            <li><a href="/ejemplo1">Masters</a></li>
             </ul>
         </li>
         <!-- Coordinador -->
-        <li class="nav-item active">
-          <a class="nav-link" data-toggle="tab" href="/#Coordinador">Coordinador</a>
+        <li class="nav-item  col-md-2">
+          <a class="nav-link" href="/coordinador">Coordinador</a>
         </li>
          <!-- Director Posgrado -->
-        <li class="nav-item active">
+        <li class="nav-item  col-md-2">
           <a class="dropdown-toggle nav-link" data-toggle="dropdown" href="#">Director Posgrado</a>
-          <ul class="dropdown-menu">
-              <li><a href="/ejemplo1">Master 1</a></li>
-              <li><a href="#section42">Master 2</a></li>
-            </ul>
+          <ul class="dropdown-menu col-md-12 centered">
+            <li><a href="/directorPosgrado">Master 1</a></li>
+            <li><a href="#section42">Master 2</a></li>
+          </ul>
         </li>
         <!-- Director Departamento -->
-        <li class="nav-item active">
+        <li class="nav-item  col-md-2">
           <a class="dropdown-toggle nav-link" data-toggle="dropdown" href="#"> Director Departamento</a>
-          <ul class="dropdown-menu">
-              <li><a href="#section41">Grados + MUIT</a></li>
+          <ul class="dropdown-menu col-md-12">
+              <li><a href="/directorDepartamento">Grados + MUIT</a></li>
               <li><a href="#section42">Masters</a></li>
               <li><a href="/tribunalActas">Tribunales Actas</a></li>
             </ul>
         </li>
         <!-- Responsable Departamento -->
-        <li class="nav-item active">
-          <a  class="nav-link" data-toggle="tab" href="/#ResponsableDepartamento"> Responsable Departamento</a>
+        <li class="nav-item  col-md-2">
+          <a class="dropdown-toggle nav-link" data-toggle="dropdown" href="#"> Responsable Departamento</a>
+          <ul class="dropdown-menu col-md-12">
+              <li><a href="/responsableDepartamento">Grados + MUIT</a></li>
+              <li><a href="/responsableDepartamento">Masters</a></li>
+            </ul>
         </li>
         <!-- Historial -->
-        <li class="nav-item active">
-          <a  class="nav-link" data-toggle="tab" href="/#Historial"> Historial</a>
+        <li class="nav-item  col-md-2">
+          <a  class="nav-link" href="/historial"> Historial</a>
         </li>
       </ul>
     </div>  
