@@ -29,6 +29,9 @@ body {
     
 }
 
+.btn-erase{
+    background-image: url("../images/trash.png");
+}
 
 
 .nav-lateralMenu {
