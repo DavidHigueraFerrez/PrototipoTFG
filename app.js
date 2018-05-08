@@ -6,7 +6,10 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var partials = require('express-partials');
+var session = require('express-session');
 
+//cas autentication
+var CASAuthentication = require('cas-authentication');
 
 var app = express();
 
@@ -22,13 +25,15 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
+//app.use('/', indexRouter);
 
 
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
-});
+// Set up an Express session, which is required for CASAuthentication.
+app.use( session({
+  secret            : 'super secret key',
+  resave            : false,
+  saveUninitialized : true
+}));
 
 // error handler
 app.use(function(err, req, res, next) {
@@ -40,5 +45,42 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+// Create a new instance of CASAuthentication.
+var cas = new CASAuthentication({
+  cas_url     : 'https://repo.etsit.upm.es/cas-upm/login',
+  service_url : 'https://localhost',
+  cas_version     : '3.0'
+});
+console.log('urls confirmadas');
+
+// Unauthenticated clients will be redirected to the CAS login and then back to
+// this route once authenticated.
+app.get( '/', cas.bounce, function ( req, res ) {
+  console.log('entro 1');
+  res.send( '/' );
+});
+
+// Unauthenticated clients will receive a 401 Unauthorized response instead of
+// the JSON data.
+app.get( '/api', cas.block, function ( req, res ) {
+  console.log('entro 2');
+  res.json( { success: true } );
+});
+
+// An example of accessing the CAS user session variable. This could be used to
+// retrieve your own local user records based on authenticated CAS username.
+app.get( '/api/user', cas.block, function ( req, res ) {
+  console.log('entro 3');
+  res.json( { cas_user: req.session[ cas.session_name ] } );
+});
+
+// Unauthenticated clients will be redirected to the CAS login and then to the
+// provided "redirectTo" query parameter once authenticated.
+app.get( '/authenticate', cas.bounce_redirect );
+
+// This route will de-authenticate the client with the Express server and then
+// redirect the client to the CAS logout page.
+app.get( '/logout', cas.logout );
 
 module.exports = app;
