@@ -48,8 +48,8 @@ app.use(function(err, req, res, next) {
 
 // Create a new instance of CASAuthentication.
 var cas = new CASAuthentication({
-  cas_url     : 'https://repo.etsit.upm.es/cas-upm/login',
-  service_url : 'https://localhost',
+  cas_url     : 'https://repo.etsit.upm.es/cas-upm/',
+  service_url : 'http://localhost:3000',
   cas_version     : '3.0'
 });
 console.log('urls confirmadas');
@@ -58,12 +58,14 @@ console.log('urls confirmadas');
 // this route once authenticated.
 app.get( '/', cas.bounce, function ( req, res ) {
   console.log('entro 1');
-  res.send( '/' );
+  
+  res.render('index');
+  
 });
 
 // Unauthenticated clients will receive a 401 Unauthorized response instead of
 // the JSON data.
-app.get( '/api', cas.block, function ( req, res ) {
+app.get( '/layout', cas.block, function ( req, res ) {
   console.log('entro 2');
   res.json( { success: true } );
 });
